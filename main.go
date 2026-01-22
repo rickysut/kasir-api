@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"slices"
 	"strconv"
 	"strings"
 )
@@ -101,11 +100,6 @@ func updateProduk(w http.ResponseWriter, r *http.Request) {
 	}
 
 	http.Error(w, "Produk belum ada", http.StatusNotFound)
-}
-
-// remove function to delete an element at index 's' from a slice 'slice'
-func remove(id int) []Produk {
-	return slices.Delete(produk, id-1, id)
 }
 
 func deleteProduk(w http.ResponseWriter, r *http.Request) {
